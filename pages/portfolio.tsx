@@ -21,7 +21,11 @@ export default function Home() {
   };
   return (
     <div>
-      <img alt="" src={"/desktop.jpg"}/>
+      <img alt="" src={"/desktop.png"}/>
+      <img alt="" src={"/footer.png"}/>
     </div>
   );
 }
+
+
+// https://www.figma.com/file/330gmTTFtYDe2rMMzm56h4/UI-Design?type=design&node-id=401%3A2&mode=design&t=EXmL1IxDWjcW1jKM-1
