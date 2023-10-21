@@ -19,12 +19,13 @@ export default function HeadSEO({
 
     return (<Head>
         {/* Fundamental head elements important for SEO. */}
-        <title>{siteTitle}</title>
+        <title>Digital Vikreta</title>
         <meta name="author" content={siteAuthor} />
         <meta name="description" content={siteDescription} />
         <link rel="canonical" href={siteCanonicalUrl} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/DVLogo.png" />
         <link rel="apple-touch-icon" href={siteLogo} />
 
         {/* Open graph meta tags. */}
