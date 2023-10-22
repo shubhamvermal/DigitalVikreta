@@ -1,4 +1,4 @@
-export type InputTypes = {
+export type InputTypes = any & {
     id: string
     label: string
     name: string
