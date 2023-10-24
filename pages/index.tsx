@@ -11,8 +11,8 @@ import Joi from 'joi';
 export default function Home() {
   const validationSchema = Joi.object({
     name: Joi.string().min(3).max(30).required().label('Name'),
-    email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } }).required().label('Email Address'),
-    phone: Joi.number().integer().min(10).required().label('Contact No.'),
+    email: Joi.string().email({ minDomainSegments: 2, tlds: { } }).required().label('Email Address'),
+    phone: Joi.string().min(10).required().label('Contact No.'),
     query: Joi.string().min(2).max(500).required().label('Message'),
   });
 
