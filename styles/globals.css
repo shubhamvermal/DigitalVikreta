@@ -18,136 +18,15 @@
   --shadow-45: rgb(0 0 0 / 45%);
 }
 
-::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--grey-300);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--grey-900);
-}
-
 body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  /* background: #D39FFF; */
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  color: var(--black);
-}
-
-a:hover {
-  color: var(--primary);
-}
-
-h1 {
-  font-size: 1.25rem;
-  margin-top: 0;
-}
-
-h1 span,
-h1 span a {
-  color: var(--grey-500);
-  font-size: 0.75em;
-  position: relative;
-  bottom: 0.1em;
-}
-
-h1 span.rounded:before {
-  content: '(';
-}
-
-h1 span.rounded:after {
-  content: ')';
-}
-
-button {
-  border-style: none;
-  background-color: var(--white);
-  color: var(--black);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-button.primary {
-  color: var(--primary);
-}
-
-button.flat {
-  padding: 1rem 2rem;
-  border: 0.1rem var(--black) solid;
-}
-
-button.flat.primary {
-  background-color: var(--primary);
-  color: var(--white);
-  border: none;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-table {
-  width: 100%;
-  max-width: 30rem;
-  border-collapse: collapse;
-  overflow-x: scroll;
-}
-
-table tr:nth-child(odd) {
-  background-color: var(--grey-300);
-  padding: 0 0.25rem;
-}
-
-table tr td {
-  padding: 0.5rem;
-}
-
-table tr td:first-child {
-  text-align: right;
-}
-
-table tr:nth-child(odd) td:first-child {
-  border-radius: 0.5rem 0 0 0.5rem;
-}
-
-table tr:nth-child(odd) td:last-child {
-  border-radius: 0 0.5rem 0.5rem 0;
-}
-
-.primary {
-  color: var(--primary);
-}
-
-.error {
-  color: var(--red-500);
-  background-color: var(--grey-300);
-  padding: 1rem;
-  border-left: 0.25rem solid var(--red-500);
-}
-
-.error:before {
-  content: 'Ein Fehler ist aufgetreten:\a';
-  white-space: pre;
-}
-
-input {
-  accent-color: var(--primary);
-}
-
-input[type='search'] {
-  outline: none;
+.text-gradient {
+  /* background: linear-gradient(342deg, #30CFD0 0%, #330867 100%); */
+  background: linear-gradient(89.79deg, #6953D3 1.85%, #8566F1 20.59%, #A14EEE 39.33%, #F98085 58.07%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
 }

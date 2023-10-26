@@ -8,6 +8,9 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // darkMode: ['class', '[data-mode="dark"]'],
+  darkMode: 'class',
+
   theme: {
     extend: {},
   },
