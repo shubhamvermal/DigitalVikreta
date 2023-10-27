@@ -3,6 +3,8 @@ import Announcement from '../components/announcement/Announcement';
 import { H1, H4, H6, Paragraph } from '../components/typography';
 import Button from '../components/button/Button';
 import GradientText from '../components/typography/GradientText';
+import classNames from 'classnames';
+import { BsChevronDown } from 'react-icons/bs';
 
 const Home = () => {
   const handleTheme = () => {
@@ -18,11 +20,16 @@ const Home = () => {
   return (
     <div className="w-full h-full">
       {/* announcement bar */}
-      <Announcement>
-        😋 Get 20% Discount for startups. Register now <Button onClick={handleTheme}>toggle theme</Button>
+      <Announcement className="flex justify-center text-white gap-1 h-8 items-center">
+        😋 Get <b>20% Discount</b> for startups. <b className='underline cursor-pointer'>Register now</b> <Button onClick={handleTheme}>toggle theme</Button>
       </Announcement>
       {/* navigation */}
-      <div className="w-full h-full bg-[#EAEFFF] p-3 rounded-t-3xl dark:bg-slate-700"></div>
+      <div className="w-full h-full bg-[#EAEFFF] p-3 rounded-t-3xl dark:bg-slate-700 flex justify-center">
+        <Tabs
+          tabs={tabs}
+          active={'HOME'}
+        />
+      </div>
       {/* Body */}
       <div className="w-full h-full bg-[#EAEFFF] p-3 dark:bg-slate-700">
         {/* landing */}
@@ -99,3 +106,39 @@ const Home = () => {
 };
 
 export default Home;
+
+const tabs = [
+  // {
+  //   id:'',
+  //   icon: "",
+  //   label: '',
+  //   path:'',
+  //   disabled:'',
+  //   className: '',
+  //   children: [{}]
+  // },
+  { key: 'HOME', label: 'Home', children: [] },
+  { key: 'PAGES', label: 'Pages' },
+  { key: 'PORTFOLIO', label: 'Portfolio' },
+  { key: 'BLOG', label: 'Blog' },
+  { key: 'CONTACT', label: 'Contact' },
+];
+
+const Tabs = (props: any) => {
+  const { tabs, active } = props;
+  return (
+    <div className="flex gap-4">
+      {(tabs || []).map(({ label, children, key }: any) => (
+        <>
+        <div className={classNames("flex items-center gap-1", 
+        // "after:content-['*'] after:text-red-500 relative after:absolute after:w-10 after:rounded-b-xl after:bg-[#D39FFF] after:left-1/2 after:translate-y-1/2",
+        {'text-red-800': key === active},
+        )}>
+          <H6>{label}</H6>
+          {(children || []).length > 0 && <BsChevronDown />}
+        </div>
+          </>
+      ))}
+    </div>
+  );
+};
