@@ -21,10 +21,8 @@ const Home = () => {
       <Announcement>
         😋 Get 20% Discount for startups. Register now <Button onClick={handleTheme}>toggle theme</Button>
       </Announcement>
-
       {/* navigation */}
-      <div className="w-full h-full bg-[#EAEFFF] p-3 rounded-t-3xl dark:bg-slate-700">jdj</div>
-
+      <div className="w-full h-full bg-[#EAEFFF] p-3 rounded-t-3xl dark:bg-slate-700"></div>
       {/* Body */}
       <div className="w-full h-full bg-[#EAEFFF] p-3 dark:bg-slate-700">
         {/* landing */}
@@ -54,43 +52,50 @@ const Home = () => {
         </svg>
       </div>
       {/* certifications */}
-      <div className="bg-[#d39fff59] h-64">
-        <H6>Our team has Certification of</H6>
-        <div>
-          {[
-            '/certs/Digital_Mar_Assoc.png',
-            '/certs/google_anal.png',
-            '/certs/google_digital.png',
-            '/certs/LinkedIn_Learning.png',
-            '/certs/smm.png',
-          ].map((cert) => (
-            <img className="" src={cert} />
-          ))}
+      <div className="bg-[#d39fff59]">
+        <div className="flex flex-col items-center">
+          <H6>
+            Our team has <GradientText text="Certification of" />
+          </H6>
+          <div className="flex justify-around items-center h-16 px-3 w-full">
+            {[
+              '/certs/google_digital.png',
+              '/certs/google_anal.png',
+              '/certs/Digital_Mar_Assoc.png',
+              '/certs/smm.png',
+              '/certs/LinkedIn_Learning.png',
+            ].map((cert) => (
+              <img className="" src={cert} />
+            ))}
+          </div>
         </div>
         <hr />
-      </div>
-      {/* our services */}
-      <div>
-        <H4>
-          Our <GradientText text="Service" />
-        </H4>
+        {/* our services */}
+        <div className="flex flex-col items-center">
+          <H4>
+            Our <GradientText text="Service" />
+          </H4>
 
-        {[
-          { title: 'Brand Consulting' },
-          { title: 'Social Media Manager' },
-          { title: 'Web & E-Commerce Setup' },
-          { title: 'Paid Advertising' },
-          { title: 'Creative Branding' },
-        ].map(({ logo, title }: any) => (
-          <div>
-            <div className="w-[145px] h-[145px] bg-gradient-to-b from-purple-300 to-purple-400 rounded-[20px] shadow"></div>
-            <H6>{title}</H6>
+          <div className="flex w-full justify-around px-3">
+            {[
+              { logo: '/assets/handshake.png', title: 'Brand Consulting' },
+              { logo: '/assets/instagram.png', title: 'Social Media Manager' },
+              { logo: '/assets/globe.png', title: 'Web & E-Commerce Setup' },
+              { logo: '/assets/megaphone.png', title: 'Paid Advertising' },
+              { logo: '/assets/idea.png', title: 'Creative Branding' },
+            ].map(({ logo, title }: any) => (
+              <div className="flex items-center flex-col">
+                <div className="w-[145px] h-[145px] flex items-center justify-center bg-gradient-to-b from-purple-300 to-purple-400 rounded-[20px] shadow">
+                  <img src={logo} />
+                </div>
+                <H6>{title}</H6>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
 };
 
 export default Home;
-// dummy

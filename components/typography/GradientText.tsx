@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const GradientText = (props: any) => {
     const {type, className, text, ...rest} = props;
   return (
-    <div className={classNames("text-gradient", className)} {...rest}>{text}</div>
+    <span className={classNames("text-gradient", className)} {...rest}>{text}</span>
   )
 }
 
