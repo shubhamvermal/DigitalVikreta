@@ -11,7 +11,7 @@ import Joi from 'joi';
 export default function Home() {
   const validationSchema = Joi.object({
     name: Joi.string().min(3).max(30).required().label('Name'),
-    email: Joi.string().email({ minDomainSegments: 2, tlds: { } }).required().label('Email Address'),
+    email: Joi.string().email({tlds: { allow: ['com', 'net'] } }).required().label('Email Address'),
     phone: Joi.string().min(10).required().label('Contact No.'),
     query: Joi.string().min(2).max(500).required().label('Message'),
   });
@@ -112,8 +112,8 @@ return errors;
                 id={'query_field'}
                 placeholder={'Write your message here'}
                 label={'Message'}
-                name={'query'}
                 value={formik.values.query}
+                name={'query'}
                 onChange={formik.handleChange}
               />
               {formik.touched.query && formik.errors.query && (
@@ -122,8 +122,11 @@ return errors;
             </div>
             <button
               type="submit"
-              className="py-3 bg-[#8700d7] px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-            >
+              disabled={!formik.isValid}
+              className={`py-3 ${
+                formik.isValid ? 'bg-[#8700d7]' : 'bg-gray-500'
+              } px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 `}
+              >
               Send message
             </button>
           </form>
@@ -133,3 +136,4 @@ return errors;
     </div>
   );
 }
+// bg-[#8700d7] color for use 

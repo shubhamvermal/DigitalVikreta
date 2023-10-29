@@ -4,7 +4,7 @@ import React from 'react'
 const Paragraph = (props: any) => {
   const {className, children, ...rest} = props
   return (
-    <p className={classNames('', className)}>{children}</p>
+    <p className={classNames('dark:text-white', className)}>{children}</p>
   )
 }
 
