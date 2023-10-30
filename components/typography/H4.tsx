@@ -5,7 +5,7 @@ const H4 = (props: any) => {
   const { className, children, ...rest } = props;
 
   return (
-    <h2 className={classNames('text-2xl font-bold dark:text-whtie', className)} {...rest}>
+    <h2 className={classNames('text-2xl font-bold dark:text-white', className)} {...rest}>
       {children}
     </h2>
   );

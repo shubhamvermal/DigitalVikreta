@@ -5,6 +5,7 @@ import Button from '../components/button/Button';
 import GradientText from '../components/typography/GradientText';
 import classNames from 'classnames';
 import { BsChevronDown } from 'react-icons/bs';
+import Anim from './anim';
 
 const Home = () => {
   const handleTheme = () => {
@@ -19,11 +20,12 @@ const Home = () => {
   };
   return (
     <div className="w-full h-full">
+      <Anim/>
       {/* announcement bar */}
       <Announcement className="flex justify-center text-white gap-1 h-8 items-center py-4">
-        {/* <Button className="bg-white w-20 h-7 rounded-md text-slate-800 text-base" onClick={handleTheme}>
+        <Button className="bg-white w-20 h-7 rounded-md text-slate-800 text-base" onClick={handleTheme}>
           special
-        </Button>{' '} */}
+        </Button>{' '}
         😍 Get <b>20% Discount</b> for startups. <b className="underline cursor-pointer">Register now</b>
       </Announcement>
       {/* navigation */}
@@ -59,7 +61,7 @@ const Home = () => {
         </svg>
       </div> */}
       {/* certifications */}
-      <div className="bg-[#EAEFFF] flex flex-col gap-12">
+      <div className="bg-[#EAEFFF] flex flex-col gap-12  dark:bg-slate-700">
         <div className="flex flex-col items-center gap-12">
           <H3 className="">
             Our team has <GradientText text="Certification of" />
